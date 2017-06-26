@@ -1,13 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
-#include <ctime>
-#include <sys/time.h>
 #include <omp.h>
 #include <mkl.h>
 using namespace std;
 
 
-
+//2D matrix-matrix multiplication
 void mm1(double **A, double **B, double **C, int matrix_size) {
   for (int i = 0 ; i < matrix_size; i++) {
     for (int j = 0;  j < matrix_size; j++) {
@@ -18,6 +16,7 @@ void mm1(double **A, double **B, double **C, int matrix_size) {
   }
 }
 
+//Alternative 2D matrix-matrix multiplication
 void mm2(double **A, double **B, double **C, int matrix_size) {
 
       for (int i = 0 ; i < matrix_size; i++) {
@@ -30,6 +29,7 @@ void mm2(double **A, double **B, double **C, int matrix_size) {
     
 }
 
+//1D matrix-matrix multiplication
 void mm3(double *a, double *b, double *c, int matrix_size) {
 
   for (int i=0 ; i<matrix_size; i++) {
@@ -42,6 +42,7 @@ void mm3(double *a, double *b, double *c, int matrix_size) {
   }
 }
 
+//matrix-matrix multiplication using Intel's MKL library
 void mm4(double *a, double *b, double *c, int matrix_size) {
 
   cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
@@ -51,11 +52,13 @@ void mm4(double *a, double *b, double *c, int matrix_size) {
 
 }
 
+//funtion to print a few elements to std out to use as a check (2D version)
 void print_check(double **Z, int matrix_size) {
   
   cout<<Z[0][0]<<" "<<Z[1][1]<<" "<<Z[2][2]<<endl;
 }
 
+//funtion to print a few elements to std out to use as a check (1D version)
 void print_check_1D(double *Z, int matrix_size) {
   
   cout<<Z[0]<<" "<<Z[matrix_size+1]<<" "<<Z[2*matrix_size+2]<<endl;
@@ -63,7 +66,7 @@ void print_check_1D(double *Z, int matrix_size) {
 }
 
 
-
+//zeros all elements of input array (2D version)
 void zero_result(double **C, int matrix_size) {
   for (int i = 0 ; i < matrix_size; i++) {
     for (int j = 0;  j < matrix_size; j++) {
@@ -72,15 +75,9 @@ void zero_result(double **C, int matrix_size) {
   }  
 }
 
+//zeros all elements of input array (1D version)
 void zero_result_1D(double *C, int matrix_size) {
   for (int i = 0 ; i < matrix_size*matrix_size; i++) {
         C[i] = 0.0;
     }
   }  
-
-void print_elapsed_time(timeval t1, timeval t2, string s) {
-  timeval t;
-  
-  timersub(&t2, &t1, &t);
-  cout << t.tv_sec + t.tv_usec/1000000.0 << " Seconds -- "<< s << endl;
-}
