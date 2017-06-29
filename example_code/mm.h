@@ -1,3 +1,17 @@
+/******************************************************************************************************
+  July 10, 2017
+
+  Ian A. Cosden
+  Princeton University
+  icosden@princeton.edu
+
+  Sample Matrix-Matrix multiplication code for CoDaS-HEP Summer School 
+
+      
+*******************************************************************************************************/
+
+
+
 #include <iostream>
 #include <stdlib.h>
 #include <omp.h>
