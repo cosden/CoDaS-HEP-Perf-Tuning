@@ -112,7 +112,8 @@ int main(int argc, char *argv[])
  
 	int max_iters=50;  //number of times to call a matrix-matrix (mm) function
 	double random_choice; //random number from rng
-
+	srand (time(NULL));
+	
 	//Depending on random number and earlier set thresholds call a matrix-multiplication
 	//function mm1,mm2,mm3,mm4.  This is done to purposely obfuscate the "hotspots"
 	for (int r=0; r < max_iters; r++) {
