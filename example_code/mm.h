@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <omp.h>
 #include <mkl.h>
+#include <sys/time.h>
 using namespace std;
 
 
@@ -66,13 +67,13 @@ void mm4(double *a, double *b, double *c, int matrix_size) {
 
 }
 
-//funtion to print a few elements to std out to use as a check (2D version)
+//function to print a few elements to std out to use as a check (2D version)
 void print_check(double **Z, int matrix_size) {
   
   cout<<Z[0][0]<<" "<<Z[1][1]<<" "<<Z[2][2]<<endl;
 }
 
-//funtion to print a few elements to std out to use as a check (1D version)
+//function to print a few elements to std out to use as a check (1D version)
 void print_check_1D(double *Z, int matrix_size) {
   
   cout<<Z[0]<<" "<<Z[matrix_size+1]<<" "<<Z[2*matrix_size+2]<<endl;

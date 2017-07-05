@@ -108,11 +108,16 @@ int main(int argc, char *argv[])
       c[idx+j]=0.0;
     }
   }
-	
- 
+
+   
   int max_iters=50;  //number of times to call a matrix-matrix (mm) function
   double random_choice; //random number from rng
   srand (time(NULL));
+
+  timeval t1, t2, t; //timer
+  gettimeofday(&t1, NULL); //get starting time
+
+
 	
   //Depending on random number and earlier set thresholds call a matrix-multiplication
   //function mm1,mm2,mm3,mm4.  This is done to purposely obfuscate the "hotspots"
@@ -136,6 +141,12 @@ int main(int argc, char *argv[])
     }
   }
 	
+  gettimeofday(&t2, NULL); //get ending time
+  timersub(&t2, &t1, &t); //get elapsed time
+  cout <<"Loop finished in "
+       << t.tv_sec + t.tv_usec/1000000.0 
+       << " seconds" << endl;
+
 	
 	
 	

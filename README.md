@@ -13,7 +13,7 @@ This is intended to use as a example to profile with performance tuning tools su
 `module load intel-vtune`
 1. Build code  
   Don’t forget the `-g`  
-  E.g. `icpc -g -O3 -xhost matmul_test.cpp -o mm.out`   
+  E.g. `icpc -g -mkl -O3 -xhost matmul_test.cpp -o mm.out`   
   Short test: `./mm.out 250` (250x250 matrix)   
 1. Launch VTune GUI  
 `amplxe-gui`
