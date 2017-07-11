@@ -1,9 +1,16 @@
 #!/bin/bash
-#SBATCH -N 1 #one node
-#SBATCH -n 1 #one task
-#SBATCH -t 00:05:00 #maximum wall time of 5 minutes
-#SBATCH --reservation=class_44
 
-module load intel intel-vtune
+# submits job script 'submit.slurm' to SLURM scheduler 
+# then waits for it to finish
 
-amplxe-cl -collect hotspots -- ./mm.out 500
+jobid=`sbatch submit.slurm | sed 's/[^0-9]//g'`
+echo "Submitted batch job $jobid"
+
+#test if finished
+while [[ $(squeue -j $jobid | grep $USER) ]]; do
+    echo "running..."
+    sleep 5 
+done
+    echo "done."
+
+
