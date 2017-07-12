@@ -9,7 +9,7 @@ This is intended to use as a example to profile with performance tuning tools su
 ## Instructions for Running on Adroit
 
 1. Log into Adroit with X11 forwarding enabled  
-`ssh -X <username>@adroit.princeton.edu`
+`ssh -Y <username>@adroit.princeton.edu`
 1. Load environment modules  
 `module load intel/17.0`  
 `module load intel-vtune`
