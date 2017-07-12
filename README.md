@@ -24,7 +24,7 @@ This is intended to use as a example to profile with performance tuning tools su
 e.g. `amplxe-gui r001hs`
 1. Explore "Bottom-up" and "Top-down Tree" and double click on hotspots to look at line-by-line performance
 1. Edit the file "submit.slurm" to change the matrix size (originally 500) and rerun the analysis. WARNING: don't go over 1500!
-1. Challenge: using the knowledge gained from VTune, improve the speed of the code by changing the functions that are called.  This is done by changing threshold values set in command line arguments to mm.out (see more info in comments at top of matmul_test.cpp).
+1. Challenge: using the knowledge gained from VTune, improve the speed of the code by changing the functions that are called.  This is done by changing threshold values set in command line arguments to mm.out in submit.slurm (see more info in comments at top of matmul_test.cpp for setting thresholds).
   
 <br><br><br><br>   
 
