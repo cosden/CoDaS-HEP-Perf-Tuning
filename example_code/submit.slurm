@@ -12,6 +12,6 @@ module load intel intel-vtune
 
 
 #run command line VTune, with the hotspots analysis on the executable mm.out for a
-# 1000x1000 matrix 
+# 500x500 matrix 
 
-amplxe-cl -collect hotspots -- ./mm.out 1000
+amplxe-cl -collect hotspots -- ./mm.out 500
