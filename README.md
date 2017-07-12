@@ -20,8 +20,8 @@ This is intended to use as a example to profile with performance tuning tools su
 1. Run the provided script to submit a VTune wrapped job to the scheduler  
   `./submit_to_scheduler`  
   This will, by default, run a 500x500 matrix example on a compute node using the VTune "Hotspots" analysis.  When it finishes it will create a directory with the results named something like R001hs, where 001 is incremented for each new analysis.
-1. Open the resulting directory with VTune GUI 
-e.g. `amplxe-gui r001hs`
+1. Open the resulting directory with VTune GUI  
+  e.g. `amplxe-gui r001hs`
 1. Explore "Bottom-up" and "Top-down Tree" and double click on hotspots to look at line-by-line performance
 1. Edit the file "submit.slurm" to change the matrix size (originally 500) and rerun the analysis. WARNING: don't go over 1500!
 1. Challenge: using the knowledge gained from VTune, improve the speed of the code by changing the functions that are called.  This is done by changing threshold values set in command line arguments to mm.out in submit.slurm (see more info in comments at top of matmul_test.cpp for setting thresholds).
