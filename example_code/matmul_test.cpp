@@ -10,7 +10,7 @@
   Purpose: 
      To use as a example to profile with performance tuning tools such as VTune.  The code does
      not do anything useful and is for illustrative/educational use only.  It is not meant to be
-     exhaustive or demostrating optimal matrix-matrix multiplication techniques. 
+     exhaustive or demonstrating optimal matrix-matrix multiplication techniques. 
 
   Description:
      Code generates two matrices with random numbers.  They are stored in 2D arrays (named A and B) as 
