@@ -1,4 +1,4 @@
-### CoDaS-HEP Summer School 2017
+### CoDaS-HEP Summer School 2018
 # Introduction to Performance Tuning & Optimization Tools
 
 
