@@ -14,7 +14,7 @@ This is intended to use as a example to profile with performance tuning tools su
 `module load intel/18.0`  
 `module load intel-vtune`
 1. Build the example code and call executable "mm.out"  
-  Don’t forget the `-g`  
+  (What happens if you forget the `-g`?)  
   e.g. `icpc -g -mkl -O3 -xhost matmul_test.cpp -o mm.out`   
   Short test on head node: `./mm.out 250` (250x250 matrix)   
 1. Run the provided script to submit a VTune wrapped job to the scheduler  
@@ -26,7 +26,7 @@ This is intended to use as a example to profile with performance tuning tools su
 1. Edit the file "submit.slurm" to increase the matrix size (originally 500) and rerun the analysis. WARNING: don't go over 1500!
 1. Challenge: using the knowledge gained from VTune, improve the speed of the code by changing the functions that are called.  This is done by changing threshold values set in command line arguments to mm.out in submit.slurm (see more info in comments at top of matmul_test.cpp for setting thresholds).
   
-<br><br><br><br>   
+<br><br><br>
 
 ## Contact
 Ian A. Cosden  
