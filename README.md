@@ -11,7 +11,7 @@ This is intended to use as a example to profile with performance tuning tools su
 1. Log into Adroit with X11 forwarding enabled  
 `ssh -Y -C <username>@adroit.princeton.edu`
 1. Load environment modules  
-`module load intel/17.0`  
+`module load intel/18.0`  
 `module load intel-vtune`
 1. Build the example code and call executable "mm.out"  
   Don’t forget the `-g`  
